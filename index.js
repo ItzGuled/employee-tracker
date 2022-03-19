@@ -1,9 +1,10 @@
 const inquirer = require("inquirer");
-const {viewDepartment, addDepartment } = require("./lib/Department");
+const { viewDepartment, addDepartment } = require("./lib/Department");
+const { viewRoles, addRole } = require("./lib/Role");
 
-const optionInput = () => {
-  return inquirer
-    .prompt([
+const optionInput = async () => {
+  while(true) {
+    let answers = await inquirer.prompt([
       {
         type: "list",
         name: "options",
@@ -18,37 +19,34 @@ const optionInput = () => {
           "Add an employee",
         ],
       },
-    ])
-    .then(answers => {
-      switch (answers.options) {
-        case "View all departments":
-          viewDepartment();
-          break;
-        case "View all roles":
-          viewRoles();
-          break;
-        case "View all employees":
-          viewEmployees();
-          break;
-        case "Update an employee":
-          updateEmployee();
-          break;
-        case "Add a Department":
-          addDepartment();
-          break;
-        case "Add a role":
-          addRole();
-          break;
-        case "Add an employee":
-          addEmployee();
-          break;
-      }
-    });
+    ]);
+
+    switch (answers.options) {
+      case "View all departments":
+        viewDepartment();
+        break;
+      case "View all roles":
+        viewRoles();
+        break;
+      case "View all employees":
+        viewEmployees();
+        break;
+      case "Update an employee":
+        updateEmployee();
+        break;
+      case "Add a Department":
+        addDepartment();
+        break;
+      case "Add a role":
+        addRole();
+        break;
+      case "Add an employee":
+        addEmployee();
+        break;
+    }
+  }
 };
 
 optionInput();
 
-module.exports = {optionInput};
-
-
-
+module.exports = { optionInput };
