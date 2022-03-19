@@ -1,4 +1,5 @@
 const inquirer = require("inquirer");
+const {viewDepartment, addDepartment } = require("./lib/Department");
 
 const optionInput = () => {
   return inquirer
@@ -44,5 +45,10 @@ const optionInput = () => {
       }
     });
 };
+
+optionInput();
+
+module.exports = {optionInput};
+
 
 
