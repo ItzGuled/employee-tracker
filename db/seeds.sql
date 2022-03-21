@@ -18,14 +18,14 @@ VALUES
 
 INSERT INTO employees (first_name, last_name, role_id, manager_id)
 VALUES
-('Tony', 'Soprano', 1, 1 ),
+('Tony', 'Soprano', 1, Null ),
 ('Silvio', 'Dante', 2, NULL),
 ('Artie', 'Bucco', 3, 1),
-('Phil', 'Leotardo', 4, 1),
-('Johnny', 'Sacks', 1, NULL),
-('Paulie', 'Gualtieri', 2, 1),
+('Phil', 'Leotardo', 4, 2),
+('Johnny', 'Sacks', 1, 1),
+('Paulie', 'Gualtieri', 1, 2 ),
 ('AJ', 'Soprano', 3, 1),
-('Carmela', 'Soprano', 4, 1),
+('Carmela', 'Soprano', 4, 2),
 ('Patsy', 'Parisi', 1, 1),
-('Vito', 'Spatafore', 2, NULL);
+('Vito', 'Spatafore', 2, 2);
 
